@@ -1,6 +1,6 @@
 locals {
   repositories = {
-    "oxr463/terraform-drone-repository" = {
+    "rancher/terraform-module-drone-repository" = {
 
       secrets = {
         master_password = {
@@ -12,7 +12,7 @@ locals {
 }
 
 module "repository" {
-  source = "./repository"
+  source = "github.com/rancher/terraform-module-drone-repository"
 
   for_each = local.repositories
 
